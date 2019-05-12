@@ -2,7 +2,10 @@
 package com.bootstrapwithspringboot.webapp.contoller;
 
 import com.bootstrapwithspringboot.webapp.model.CalcResult;
+import com.bootstrapwithspringboot.webapp.model.ContactForm;
+import com.bootstrapwithspringboot.webapp.model.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,7 +25,9 @@ public class WebAppContoller {
     @Autowired
     public WebAppContoller(Environment environment){
         appMode = environment.getProperty("app-mode");
+
     }
+
 
     @RequestMapping("/index")
     public String index(Model model){
@@ -51,7 +56,7 @@ public class WebAppContoller {
         model.addAttribute("result",calcResult.getWeight()/(((calcResult.getHeight())/100)*((calcResult.getHeight())/100)));
         //System.out.println(weight/(((height)/100)*((height)/100)));
         return "calc";
-
-
     }
+
+
 }

@@ -49,41 +49,25 @@
 
             <div class="row">
                 <div class="col-sm border">
-                    <div th:if="${result!=null}" class="text-center" style="height: 100px">
-                        <b>Your result</b><br>
-                        <div th:if="${result < 18}" class="bg-dark h-100" >
-                            You're underweight
-                        </div>
-                        <div th:if="${result >= 18 && result < 25}" class="bg-success h-100">
-                            you have the perfect weight
-                        </div>
-                        <div th:if="${result > 25}" class="bg-danger h-100">
-                            You're overweight.
-                        </div>
-                        <br>
-                    </div>
+            left
                 </div>
                 <div class="col-sm">
-                    <span><b>Calculator form</b></span>
-                    <form action="/calc" method="post" th:object="${calcResult}">
-<!--                    if:each result condition-->
-<!--                    <span th:if="${result==null}"><b>Calculator form</b></span>-->
-<!--                    <form th:if="${result==null}" action="/calc" method="post" th:object="${calcResult}">-->
-                        Your weight in<br>
-                        <input th:field="*{weight}" type="number" ><br>
-                        Your height in cm<br>
-                        <input th:field="*{height}" type="number" >
+                    <span><b>Give your contact details</b></span>
+                    <form method="post" action="/addcontactform" th:object="${contactForm}">
+                        Your name<br>
+                        <input  th:field="*{name}" type="text" >
+                        <br>Your surname
+                        Surname<br>
+                        <input  th:field="*{surname}"type="text">
+                        <br>Your phone number
+                        <input   th:field="*{phonenumber}"type="number">
                         <br>  <br>
-
-                        <input type="submit" value="Submit" class="btn btn-sm btn-danger">
+<!--                        <input type="submit" value="Submit" class="btn btn-sm btn-danger">-->
                         <br>
                     </form>
                 </div>
                 <div class="col-sm">
-                    <span><b>Your result is:</b>
-                    <br>
-                    </span> &nbsp
-                    <h1><span th:text="${#numbers.formatDecimal(result,0,2)}"></span></h1>
+right
                 </div>
             </div>
             <br>
