@@ -61,40 +61,41 @@
         </div>
     </nav>
 
-    <div class="jumbotron">
-        <!--Usage of models we wrote in WepAppController th:text="'Welcome to basic Bootstrap with Spring Boot created by ' + ${username} -->
-
-        <p>CALC</p>
-        <div th:if="${result!=null}" style="vertical-align: middle">
-            Your weight in kg<br>
-            <div th:if="${result < 18}" style="width: 200px; height: 200px; background:red">
+    <div class="jumbotron ">
+        <div class="container text-center justify-content-center align-items-center">
+        <div th:if="${result!=null}" class="text-center">
+            <b>Your result</b><br>
+            <div th:if="${result < 18}" class="bg-success">
+<!--                style="width: 200px; height: 200px; background:red"-->
                 You're underweight
             </div>
-
-            <div th:if="${result >= 18 && result < 25}" style="width: 200px; height: 200px; background:greenyellow">
-                you have the perfect weight            </div>
-
-            <div th:if="${result > 25}" style="width: 200px; height: 200px; background:saddlebrown">
+            <div th:if="${result >= 18 && result < 25}" class="bg-dark ">
+                you have the perfect weight
+            </div>
+            <div th:if="${result > 25}" class="bg-danger">
                 You're overweight.
             </div>
             <br>
         </div>
-        <span th:if="${result==null}">  Calculator form</span>
-        <br>
+            <span th:if="${result==null}"><b>Calculator form</b></span>
         <form th:if="${result==null}" action="/calc" method="post" th:object="${calcResult}">
+            Your weight in<br>
             <input th:field="*{weight}" type="number" ><br>
             Your height in cm<br>
             <input th:field="*{height}" type="number" >
-            <br>
-            <input type="submit" value="Submit" >
+            <br>  <br>
+
+            <input type="submit" value="Submit" class="btn btn-sm btn-danger">
             <br>
         </form>
-
-
-
+        <br>
         <p>
-            <a class="btn btn-lg btn-primary" href="#" role="button">View navbar docs &raquo;</a>
+            <a class="btn btn-sm btn-warning" href="/calc" role="button">Calculate once again&raquo;</a>
         </p>
+            <p>
+                <a class="btn btn-sm btn-warning" href="" role="button">BMI on Wiki</a>
+            </p>
+        </div>
     </div>
 </div> <!-- /container -->
 <!-- Bootstrap core JavaScript
