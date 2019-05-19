@@ -21,9 +21,7 @@ public class ContactService {
 //                contactFormList.size());
         return contactForm;
     }
-
     public List<ContactForm> printAllPhoneContacts(){
         return contactFormList;
     }
-    
 }
