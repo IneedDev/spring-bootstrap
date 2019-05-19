@@ -12,18 +12,18 @@ public class ContactService {
     //bean
     //singelton
 
-    public String addPhoneContact (ContactForm contactForm){
+    public ContactForm addPhoneContact (ContactForm contactForm){
         contactFormList.add(contactForm);
-        System.out.println("ContactForm: " +
-                contactForm.getSurname()+" | "+
-                contactForm.getName()+" | "+
-                contactForm.getPhonenumber() + "  "+
-                contactFormList.size());
-        return contactForm.getSurname();
+//        System.out.println("ContactForm: " +
+//                contactForm.getSurname()+" | "+
+//                contactForm.getName()+" | "+
+//                contactForm.getPhonenumber() + "  "+
+//                contactFormList.size());
+        return contactForm;
     }
 
     public List<ContactForm> printAllPhoneContacts(){
         return contactFormList;
     }
-
+    
 }

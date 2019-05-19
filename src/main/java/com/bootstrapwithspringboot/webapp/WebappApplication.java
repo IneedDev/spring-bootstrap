@@ -7,6 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackageClasses= WebAppContoller.class)
+@ComponentScan("com.bootstrapwithspringboot.webapp") //to scan packages mentioned
+
 public class WebappApplication {
 
     public static void main(String[] args) {

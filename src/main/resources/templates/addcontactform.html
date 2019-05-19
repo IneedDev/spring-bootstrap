@@ -48,34 +48,32 @@
         <div class="container text-center justify-content-center align-items-center">
 
             <div class="row">
-                <div class="col-sm border">
-            left
-                </div>
                 <div class="col-sm">
+
+                </div>
+                <div class="col-sm border">
                     <span><b>Give your contact details</b></span>
                     <form method="post" action="/addcontactform" th:object="${contactForm}">
                         Your name<br>
-                        <input  th:field="*{name}" type="text" >
+                        <input  th:field="*{name}" type="text" required>
                         <br>Your surname
                         Surname<br>
-                        <input  th:field="*{surname}"type="text">
+                        <input  th:field="*{surname}"type="text" required>
                         <br>Your phone number
                         <input   th:field="*{phonenumber}"type="number">
                         <br>  <br>
-<!--                        <input type="submit" value="Submit" class="btn btn-sm btn-danger">-->
+                        <input type="submit" value="Submit" class="btn btn-sm btn-danger">
+                        <br>
                         <br>
                     </form>
                 </div>
                 <div class="col-sm">
-right
+
                 </div>
             </div>
             <br>
             <p>
-                <a class="btn btn-sm btn-warning" href="/calc" role="button">Calculate once again&raquo;</a>
-            </p>
-            <p>
-                <a class="btn btn-sm btn-warning" href="" role="button">BMI on Wiki</a>
+                <a class="btn btn-sm btn-warning" href="/contactlist" role="button">Contact list&raquo;</a>
             </p>
         </div>
     </div>
