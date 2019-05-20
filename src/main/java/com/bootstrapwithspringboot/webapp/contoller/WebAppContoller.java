@@ -53,7 +53,7 @@ public class WebAppContoller {
             model.addAttribute("error","uu masz błąd!!!");
             return "calc";
         }
-        model.addAttribute("result",calcResult.getWeight()/(((calcResult.getHeight())/100)*((calcResult.getHeight())/100)));
+       // model.addAttribute("result",calcResult.getWeight()/(((calcResult.getHeight())/100)*((calcResult.getHeight())/100)));
         //System.out.println(weight/(((height)/100)*((height)/100)));
         return "calc";
     }

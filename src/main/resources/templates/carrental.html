@@ -13,6 +13,8 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+
+
 </head>
 <body>
 <div class="container">
@@ -32,7 +34,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/carrental">Car Rental App</a>
+                    <a class="nav-link disabled" href="#">Car Rental App</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -42,16 +44,40 @@
         </div>
     </nav>
 
-    <div class="jumbotron">
-        <!--Usage of models we wrote in WepAppController th:text="'Welcome to basic Bootstrap with Spring Boot created by ' + ${username} -->
-        <!--        <h3 th:text="'Welcome to basic Bootstrap with Spring Boot created by ' + ${username}"></h3>-->
-        <!--        <p th:text="'This date example  ' + ${#dates.format(datetime, 'dd MMM yyyy HH:mm')}"></p>-->
-        <p> Collection of spring based web applications like:BMI Calculator, Phonebook App and Car Rental App</p>
-        <!--        <p>-->
-        <!--            <a class="btn btn-lg btn-primary" href="#" role="button">View navbar docs &raquo;</a>-->
-        <!--        </p>-->
+    <div class="jumbotron ">
+        <div class="container text-center justify-content-center align-items-center">
+
+            <div class="row">
+                <div class="col-sm border">
+
+                    <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+                    <form th:action="@{/logout}" method="post">
+                        <input type="submit" value="Sign Out"/>
+                    </form>
+
+
+                </div>
+                <div class="col-sm border">
+                LOGIN FORM
+                </div>
+                <div class="col-sm">
+                    <br>
+
+                </div>
+            </div>
+            <br>
+
+            <br>          <p>
+            <a class="btn btn-sm btn-warning" href="/addcontactform" role="button">Add new contact</a>
+        </p>
+
+
+        </div>
     </div>
+
+
 </div> <!-- /container -->
+
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
