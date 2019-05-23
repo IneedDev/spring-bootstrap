@@ -17,7 +17,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/home","/index","/contactlist","/addcontactform","/carrental").permitAll()
+                //this sites will do not refer to login page which is carentallogin
+                .antMatchers("/", "/home","/index","/contactlist","/addcontactform","/carrental","/hello","/carrentalapp","/calc").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

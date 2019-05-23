@@ -49,22 +49,16 @@
 
             <div class="row">
                 <div class="col-sm border">
-                    <div th:if="${param.error}">
-                        Invalid username and password.
-                    </div>
-                    <div th:if="${param.logout}">
-                        You have been logged out.
-                    </div>
-                    <form th:action="@{/login}" method="post">
-                        <div><label> User Name : <input type="text" name="username"/> </label></div>
-                        <div><label> Password: <input type="password" name="password"/> </label></div>
-                        <div><input type="submit" value="Sign In"/></div>
+                    <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+                    <form th:action="@{/logout}" method="post">
+                        <input type="submit" value="Sign Out"/>
                     </form>
+
 
 
                 </div>
                 <div class="col-sm border">
-                LOGIN FORM
+                Car Rental APP options
                 </div>
                 <div class="col-sm">
 

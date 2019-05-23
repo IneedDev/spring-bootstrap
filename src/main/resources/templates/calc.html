@@ -65,19 +65,19 @@
                 </div>
                 <div class="col-sm">
                     <span><b>Calculator form</b></span>
-<!--                    <form action="/calc" method="post" th:object="${calcResult}">-->
-<!--&lt;!&ndash;                    if:each result condition&ndash;&gt;-->
-<!--&lt;!&ndash;                    <span th:if="${result==null}"><b>Calculator form</b></span>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <form th:if="${result==null}" action="/calc" method="post" th:object="${calcResult}">&ndash;&gt;-->
-<!--                        Your weight in<br>-->
-<!--                        <input th:field="*{weight}" type="number" ><br>-->
-<!--                        Your height in cm<br>-->
-<!--                        <input th:field="*{height}" type="number" >-->
-<!--                        <br>  <br>-->
+                    <form action="/calc" method="post" th:object="${calcResult}">
+<!--                    if:each result condition-->
+                    <span th:if="${result==null}"><b>Calculator form</b></span>
+                    <form th:if="${result==null}" action="/calc" method="post" th:object="${calcResult}">
+                        Your weight in<br>
+                        <input th:field="*{weight}" type="number" ><br>
+                        Your height in cm<br>
+                        <input th:field="*{height}" type="number" >
+                        <br>  <br>
 
-<!--                        <input type="submit" value="Submit" class="btn btn-sm btn-danger">-->
-<!--                        <br>-->
-<!--                    </form>-->
+                        <input type="submit" value="Submit" class="btn btn-sm btn-danger">
+                        <br>
+                    </form>
                 </div>
                 <div class="col-sm">
                     <span><b>Your result is:</b>
